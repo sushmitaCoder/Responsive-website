@@ -1,0 +1,1464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+   <title>PROTOUCH</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+  body {
+	line-height: 1.8;
+	color: black;
+	font-family: Lato, sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+  }
+  h2 {
+	font-size: 24px;
+	text-transform: uppercase;
+	color: #c10000;
+	font-weight: 600;
+	margin-bottom: 30px;
+  }
+  .bg-grey2 {color:white;
+  }
+  h4 {
+	font-size: 19px;
+	line-height: 1.375em;
+	color: #333333;
+	font-weight: 400;
+	margin-bottom: 30px;
+  }  
+      .col-sm-4{
+          cursor: pointer;
+      }
+      
+      .nav-logo img{
+    width: 150px;
+    margin-left: -50px;
+    margin-top: -20px;
+}
+  .jumbotron {
+    /*background-color: #f4511e;*/
+    background-color: #524d4d;
+    background-image: url(home_ref.jpeg);
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    background-position: left;
+    color: #fff;
+    padding: 218px 25px;
+    font-family: Montserrat, sans-serif;
+    margin-top: 70px;
+}
+  .container-fluid {
+    padding: 60px 50px;
+  }
+  .bg-grey {
+	background-color: #9a0e0e;
+	color: #FFFFFF;
+  }
+  .logo-small {
+    color: #f4511e;
+    font-size: 50px;
+  }
+  .logo {
+    color: #f4511e;
+    font-size: 200px;
+  }
+  .thumbnail {
+    padding: 0 0 15px 0;
+    border: none;
+    border-radius: 0;
+  }
+  .thumbnail img {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .item h4 {
+    font-size: 19px;
+    line-height: 1.375em;
+    font-weight: 400;
+    font-style: italic;
+    margin: 70px 0;
+  }
+  .item span {
+    font-style: normal;
+  }
+  .panel {
+    border: 1px solid #f4511e; 
+    border-radius:0 !important;
+    transition: box-shadow 0.5s;
+  }
+  .panel:hover {
+    box-shadow: 5px 0px 40px rgba(0,0,0, .2);
+  }
+  .panel-footer .btn:hover {
+    border: 1px solid #f4511e;
+    background-color: #fff !important;
+    color: #f4511e;
+  }
+  .panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+  }
+  .panel-footer {
+    background-color: #FAEBD7 !important;
+  }
+  .panel-footer h3 {
+    font-size: 32px;
+  }
+  .panel-footer h4 {
+    color: #aaa;
+    font-size: 14px;
+  }
+  .panel-footer .btn {
+    margin: 15px 0;
+    background-color: #f4511e;
+    color: #fff;
+  }
+  .navbar {
+	margin-bottom: 0;
+	background-color: #FFFFFF;
+	height: auto;
+	z-index: 9999;
+	border: 0;
+	font-size: 17px !important;
+	line-height: 1.42857 !important;
+	letter-spacing: 1px;
+	border-radius: 0;
+	font-family: Montserrat, sans-serif;
+  }
+  .navbar li a, .navbar .navbar-brand {
+	color: #000000 !important;
+  }
+  .navbar-nav li a:hover, .navbar-nav li.active a {
+	color: #FFFFFF !important;
+	background-color: #121275 !important;
+  }
+  .navbar-default .navbar-toggle {
+    border-color: blue;
+    color: #fff !important;
+  }
+  footer .glyphicon {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #e6004c;
+  }
+  .slideanim {visibility:hidden;}
+  .slide {
+    animation-name: slide;
+    -webkit-animation-name: slide;
+    animation-duration: 1s;
+    -webkit-animation-duration: 1s;
+    visibility: visible;
+  }
+.glow {
+  font-size: 80px;
+  color: #fff;
+  text-align: center;
+  -webkit-animation: glow 1s ease-in-out infinite alternate;
+  -moz-animation: glow 1s ease-in-out infinite alternate;
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #f20a0a, 0 0 40px #f20a0a, 0 0 50px #f20a0a, 0 0 60px #f20a0a, 0 0 70px #f20a0a;
+  }
+  
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4d4d, 0 0 40px #ff4d4d, 0 0 50px #ff4d4d, 0 0 60px #ff4d4d, 0 0 70px #ff4d4d, 0 0 80px #ff4d4d;
+  }
+}
+  * {
+  box-sizing: border-box;
+}
+
+
+.fa {
+  
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+
+
+
+.fa-facebook {
+  
+  color: white;
+}
+
+.fa-twitter {
+
+  color: white;
+}
+
+
+
+.fa-linkedin {
+  
+  color: white;
+}
+
+
+
+.fa-instagram {
+ 
+  color: white;
+}
+    * {
+  box-sizing: border-box;
+}
+
+.row > .column {
+  padding: 0 8px;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.column {
+  float: left;
+  width: 25%;
+}
+
+
+
+    .collapsible {
+  background-color: #fff0b3;
+  color: black;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: yes;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+    .active, .collapsible:hover {
+  background-color: #ffe066;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #FOF8FF;
+}
+    
+
+
+  @keyframes slide {
+    0% {
+      opacity: 0;
+      transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+  }
+  @-webkit-keyframes slide {
+    0% {
+      opacity: 0;
+      -webkit-transform: translateY(70%);
+    } 
+    100% {
+      opacity: 1;
+      -webkit-transform: translateY(0%);
+    }
+  }
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+    .btn-lg {
+      width: 100%;
+      margin-bottom: 35px;
+    }
+  }
+  @media screen and (max-width: 480px) {
+    .logo {
+      font-size: 150px;
+    }
+  }
+  </style>
+  
+</head>
+<body id="home" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+<nav class="navbar navbar-default navbar-fixed-top">
+
+  <div class="container">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <div class="nav-logo">
+             <img src="pic2.png">
+        </div>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav navbar-right">
+        <li><a href="#home"><strong>HOME</strong></a></li>
+        
+        
+<li><a href="#team"><strong>TEAM</strong></a></li>
+<li><a href="#academy"><strong>ACADEMY</strong></a></li>    
+    
+<li><a href="#golfcentre"><strong>GOLF CENTRE</strong></a></li>
+        
+        <li><a href="#services"><strong>SERVICES</strong></a></li>
+
+       <li><a href="#charity"><strong>CHARITY</strong></a></li> 
+        <li><a href="#contact"><strong>CONTACT US</strong></a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+  
+<div class="jumbotron text-center">
+<h1 class="glow">Protouch Sports</h1> 
+   
+  <form>
+    <div class="input-group">
+      
+    </div>
+<a href="https://www.facebook.com/ProtouchGolfAcademy" class="fa fa-facebook"></a>
+<a href="https://twitter.com/protouchsports" class="fa fa-twitter"></a>
+
+<a href="https://www.linkedin.com/company/protouch-sports-private-limited/?viewAsMember=true" class="fa fa-linkedin"></a>
+
+<a href="https://www.instagram.com/protouchgolfacademy/" class="fa fa-instagram"></a>
+
+  </form>
+</div>
+ <!-- Container (About Section) -->
+  
+<div class="container-fluid text-center">
+ 
+  
+         
+      <p> <strong>About us:</strong> Protouch began its journey as an apparel brand.  From its inception, the founder Indrajit Bhalotia had a vision to become the number 1 golf solution company in India. Golf was yet to see revolution in the 90’s. It was hardly accessible and rather exclusive. But the young pro golfer was determined to be the wave of change that the country needed in terms of this elite sport.
+
+Thus, began a struggle to set things right. Protouch transpired into sectors beyond luxury apparel. Protouch became the first golf academy of Eastern India and combined the latest technological developments in sports science with the best coaching. However, Protouch was not just a revolution in terms of its extraordinary golf schooling. We extended the opportunity, to thousands of people, to be a part of the golfing fraternity. We brought golf to the masses.
+
+Protouch also offers its expertise to different golf courses via facility management. For more than 30 years, Protouch has been influencing, inspiring and rejuvenating the addiction of this beautiful sport and its effects on and course and beyond.
+</p>
+  </div>
+  
+  
+      <!-- Container (Team Section) -->
+    
+<div id="team" class="container-fluid text-center">
+  
+  <h2>team</h2>
+  <div class="row">
+  
+   
+
+
+      <a href="#demo" data-toggle="collapse">
+        <img src="sir_ref.jpeg" class="img-square person" alt="Indrajit Bhalotia" width="255" height="255" align= "center">
+      </a>
+<p class="text-center"><strong>Indrajit Bhalotia</strong></p>
+      <div id="demo" class="collapse">
+        <p><strong>Director</strong></p>
+<p>Professional golfer for 31 years</p>
+<p>5 time winner of P.G.A titles including Crompton-Greaves at BPGC</p>
+<p>Played Asian Tour for 12 years</p>
+<p>Staff teacher at NGAI</p>
+<p>Coach to the Indian Junior Team for The Asia Pacific Championship, 2005-2008</p>
+<p>“A” certified coach from Italy at the European PGA teaching centre</p>
+<p>Qualified in Sports Psychology & Golf Fitness</p>
+
+      </div>
+    </div>
+  
+  
+  <p><b>Our Team</b></p>
+<button type="button" class="collapsible"><b>Protouch Coaches</b></button>
+<div class="content">
+  <h3><strong>Protouch Coaches</strong></h3><br>
+  <!-- First Photo Grid-->
+<div class="row">
+    
+
+    <div class="col-sm-4">
+    
+      <a href="#demo2" data-toggle="collapse">
+        <img src="ruku_ref.jpeg" class="square person" alt="Rukmini Mehta" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Rukmini Mehta</strong></p>
+      <div id="demo2" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> A Category </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      
+      <a href="#demo3" data-toggle="collapse">
+        <img src="bharat.jpeg" class="img-square person" alt="Bharat Rajawat" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Bharat Rajawat</strong></p>
+      <div id="demo3" class="collapse">
+         <p><strong> Coach </strong></p>
+<p> A Category </p>
+      </div>
+    </div>
+  <div class="col-sm-4">
+
+      <a href="#demo4" data-toggle="collapse">
+        <img src="ashish.jpg" class="img-square person" alt="Ashish Samanta" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Ashish Samanta</strong></p>
+      <div id="demo4" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> B Category </p>
+
+      </div>
+    </div>
+  </div>
+<br>
+  <!-- Second Photo Grid-->
+<div class="row">
+    
+    <div class="col-sm-4">
+    
+      <a href="#demo5" data-toggle="collapse">
+        <img src="tung_ref.jpeg" class="square person" alt="Swapan Tung" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Swapan Tung</strong></p>
+      <div id="demo5" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> C Category </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      
+      <a href="#demo6" data-toggle="collapse">
+        <img src="somnath_ref.jpeg" class="img-square person" alt="Somnath Roy" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Somnath Roy</strong></p>
+      <div id="demo6" class="collapse">
+       <p><strong> Coach </strong></p>
+<p> C Category </p>
+</div>
+      </div>
+  <div class="col-sm-4">
+
+      <a href="#demo7" data-toggle="collapse">
+        <img src="arif.jpg" class="img-square person" alt="Arif Ali" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Arif Ali</strong></p>
+      <div id="demo7" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> C Category </p>
+
+      </div>
+    </div>
+    </div>
+<br>
+<!-- Third Photo Grid-->
+  <div class="row">
+    
+    <div class="col-sm-4">
+    
+      <a href="#demo8" data-toggle="collapse">
+        <img src="tavleen_ref.jpeg" class="square person" alt="Tavleen Batra" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Tavleen Batra</strong></p>
+      <div id="demo8" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> C Category </p>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      
+      <a href="#demo9" data-toggle="collapse">
+        <img src="montu.jpg" class="img-square person" alt="Montu Sarkar" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Montu Sarkar</strong></p>
+      <div id="demo9" class="collapse">
+         <p><strong> Coach </strong></p>
+<p> C Category </p>
+      </div>
+    </div>
+    <div class="col-sm-4">
+
+      <a href="#demo10" data-toggle="collapse">
+        <img src="sudarshan.jpg" class="img-square person" alt="Sudarshan Sarkar" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Sudarshan Sarkar</strong></p>
+      <div id="demo10" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> C Category </p>
+
+      </div>
+    </div>
+</div>
+<br>
+<!-- Fourth Photo Grid-->
+  <div class="row">
+    
+    <div class="col-sm-4">
+    
+      <a href="#demo11" data-toggle="collapse">
+        <img src="hasem_ref.jpeg" class="square person" alt="Sk Hasem" width="255" height="255">
+      </a>
+<p class="text-center"><strong>S K Hasem</strong></p>
+      <div id="demo11" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> D Category </p>
+
+      </div>
+    </div>
+    <div class="col-sm-4">
+      
+      <a href="#demo12" data-toggle="collapse">
+        <img src="raju.jpg" class="img-square person" alt="Raju Ghosh" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Raju Ghosh</strong></p>
+      <div id="demo12" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> D Category </p>
+</div>
+      </div>
+    <div class="col-sm-4">
+
+      <a href="#demo13" data-toggle="collapse">
+        <img src="pandey_ref.jpeg" class="img-square person" alt="Binod Pandey" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Binod Pandey</strong></p>
+      <div id="demo13" class="collapse">
+        <p><strong> Coach </strong></p>
+<p> D Category </p>
+
+      </div>
+    </div>
+    </div>
+<br>
+
+  
+ 
+</div>
+<button type="button" class="collapsible"><b>Protouch Champions</b></button>
+<div class="content">
+  <!-- First Photo Grid-->
+  <h3><strong>Protouch Champions</strong></h3><br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+     <img src="tutul_ref.jpeg" class="img-square person" alt="VIRAJ MADAPPA" width="255" height="255"> 
+<p><b>VIRAJ MADAPPA</b></p>
+<p> India No. 1, “A” category, 2014-2015</p>
+ <p>East India Amateur winner, 2014</p>
+      <p>
+        Winner, TAKE Solutions Masters 2018, Asian Tour
+      </p>
+
+ 
+    </div>
+    <div class="w3-quarter">
+     <img src="viraj_ref.jpeg" class="img-square person" alt="TUTUL ALI" width="255" height="255">
+<p><b>TUTUL ALI</b></p>
+<p> Top ten, Category “A”, 2014</p> 
+</div>
+<div class="w3-quarter">
+     <img src="siddhi_ref.jpeg" class="img-square person" alt="SIDDHI KAPOOR" width="255" height="255">
+<p><b>SIDDHI KAPOOR</b></p>
+<p>Winner on WGAI Tour</p>
+    </div>
+ <div class="w3-quarter">
+      <img src="divyangshu.jpeg" class="img-square person" alt="DIVYANSHU BAJAJ" width="255" height="255">
+<p><b>DIVYANSHU BAJAJ</b></p>
+<p>Junior turned Pro</p>
+ <p>Top 50 in PGTI ranking.</p>
+
+    </div>
+
+    
+   
+  </div>
+  
+  <!-- Second Photo Grid-->
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+    <img src="romel_ref.jpeg" class="img-square person" alt="ROMMEL MAJUMDAR" width="255" height="255">
+<p><b>ROMMEL MAJUMDAR</b></p>  
+<p>Past India’s no.1 in “C” & “D” category</p>
+
+    </div>
+    <div class="w3-quarter">
+      <img src="manvi halwa.jpeg" class="img-square person" alt="MANVI HALWASIA" width="255" height="255">
+<p><b>MANVI HALWASIA</b></p>
+<p>Former India No. 1 Junior</p>
+ 
+
+    </div>
+    <div class="w3-quarter">
+      
+      <img src="surya_ref.jpeg" class="img-square person" alt="SURYA PRAKASH" width="255" height="255">
+<p><b>SURYA PRAKASH</b></p>
+<p>Past India’s no.1  in Junior</p>
+
+    </div>
+  </div>
+
+</div>
+
+
+     
+  </div>
+  
+
+<!-- Container (Academy Section) -->
+  
+<div id="academy" class="container-fluid text-center">
+  
+         <h2>Academy</h2>
+
+  <div class="w3-row-padding w3-center" style="margin-top:64px">
+    <div class="w3-quarter">
+      <i class="fa fa-group w3-margin-bottom w3-jumbo w3-center"></i>
+      
+      <p>Protouch Golf academy understands the true essence of golf and tutors beyond golf technicalities.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-handshake-o w3-margin-bottom w3-jumbo"></i>
+      
+      <p>Protouch Golf Academy was established in May 1990, in Kolkata. Its main objective is to give international quality golf coaching at an affordable price.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-graduation-cap w3-margin-bottom w3-jumbo"></i>
+     
+      <p>Protouch has 26 NGAI certified experienced golf coaches onboard along with a core team of sports management professionals.</p>
+    </div>
+    <div class="w3-quarter">
+      <i class="fa fa-trophy w3-margin-bottom w3-jumbo"></i>
+      
+      <p>Toddler Golf is a trademark of Protouch Golf Academy. Protouch golf academy also supports and trains for the underprivileged children. </p>
+    </div>
+  </div>
+  
+    <p><b>Our Activities:</b></p>
+<button type="button" class="collapsible"><b>Junior Programs</b></button>
+<div class="content">
+  <p>PROTOUCH organizes Inter-School Golf Championship in Kolkata every year! More than 150 juniors from near about 20 schools took part in Inter-School, 2014 and 2015!</p>
+  
+    <h4><strong>Tolly Junior Program</strong></h4>
+   <p> Tolly Airtel Golf Centre is one of the top 20 Golf centers in the world, accoutred with extraordinary coaching and golfing facilities. Protouch Golf Academy at Tolly Golf Center was recently honoured with the Best Golf Academy in India Award at the India Golf Awards, 2017. The centre has won a special award at India Golf Expo for 'Regional initiative for golf promotion (East Zone)'. The centre hosts numerous corporate golf events in Kolkata. Prominent corporate houses are affiliated with Tolly. The centre also has an extensive Sports Science wing.
+</p>
+<br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="tolly_junior1.jpg" alt="tolly_junior1" style="width:90%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="tolly_junior2.jpg" alt="tolly_junior2" style="width:100%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="tolly_junior3.jpg" alt="tolly_junior3" style="width:100%">
+      
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="tolly_junior4.jpg" alt="tolly_junior4" style="width:90%">
+     </div>
+  </div>
+  
+ <br>
+    <h4><strong>RCGC Junior Program</strong></h4>
+   <p>  Starting with a modest number of 20 juniors back in 2003, the RCGC Junior Golf Program has come a long way since under the guidance of Indrajit Bhalotia and his Protouch Golf Academy. The RCGC Junior Program has been an integral part in developing a base of remarkable 600 plus young golfers in the city. Scientific golf coaching, world class practice facilities, top quality training equipment, application of sports science have been the key to the success of the junior program.
+</p>  <br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="rcgc2.jpg" alt="rcgc2" style="width:90%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="rcgc5.jpg" alt="rcgc5" style="width:100%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="rcgc1.jpg" alt="rcgc1" style="width:100%">
+      
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="rcgc4.jpg" alt="rcgc4" style="width:85%">
+     </div>
+</div>
+  
+ <br>
+    <h4><strong>Shillong Junior Program</strong></h4>
+    <p>  The Meghalaya Golf Promoters' Society (MGPS) is an association of Golfers and like minded people for the development and growth of the game of Golf.
+Protouch in association of MGPS built the First Ever Golf Academy of the North East.
+</p>  <br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+
+<div class="w3-half">
+      <img src="shillong1.jpg" alt="shillong1" style="width:50%">
+     </div>
+
+
+<div class="w3-half">
+      <img src="shillong2.png" alt="shillong2" style="width:60%">
+     </div>
+ </div>
+  
+  
+  
+
+
+<br>
+    <h4><b>CLGC Junior Program</b></h4>
+    <p> Protouch Golf Academy aims to bring golf to the masses. Junior golfers need not be affiliated to any clubs to be a part of the program in Maidan. The main objective is to promote golf as an accessible sport in India. It is an open for all, affordable program that provides quality training.  Students can learn for a fee as trivial as Rs.200 per session. One need not invest in expensive equipment either. Protouch provides free equipment and balls to the juniors.
+</p>  <br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+<img src="clgc1.png" width=30% align="center">
+</div>
+  
+  
+    <h4><b>BPGC Junior Program</b></h4>
+    <p>   The BPGC is the most prestigious golf club in Mumbai & in 2009 underwent extensive redesign & modifications to the course. It’s a very demanding course & has a large member community that is largely focused on golf.
+Protouch organizes extensive Junior Camps at BPGC.
+</p> <br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+<img src="bpgc1.jpg" width=30% align="center">
+</div>
+  
+  <br>
+    <h4><b>Hyderabad Junior Program</b></h4>
+    <p> The Hyderabad Golf club is located in a historic setting in and around Golconda fort.
+Hyderabad’s first and only public golf course, it is accessible to golfers from all over the world.
+The Hyderabad Golf Association, a NON PROFIT organisation was formed by a voluntary group of golfers in the year 1993 with an object to encourage, promote and develop the sport of golf, which is now an Olympic sport and establish an international standard golf course.
+</p> <br>
+<div class="w3-row-padding w3-padding-16 w3-center">
+<img src="hyderabad1.png" width=30% align="center">
+</div>
+  
+  <!-- end of junior prog content-->
+  </div>
+  
+<button type="button" class="collapsible"><b>Elite Sessions</b></button>
+<div class="content">
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-third">
+      <img src="elite1.jpeg" alt="elite1" style="width:90%">
+      
+    </div>
+    <div class="w3-third">
+      <img src="elite3.jpeg" alt="elite3" style="width:90%">
+      
+    </div>
+    <div class="w3-third">
+      <img src="elite2.jpeg" alt="elite2" style="width:90%">
+      
+    </div>
+     
+  </div>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <h4><b>Classroom Classes</b></h4>
+    <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-half">
+      <img src="classroom_classes1.jpeg" alt="classrom_classes1" style="width:50%">
+      
+    </div>
+    <div class="w3-half">
+      <img src="classroom_classes2.jpeg" alt="classrom_classes2" style="width:50%">
+      
+    </div>
+  </div>
+    
+    
+    
+    
+  </div>
+  
+  
+</div>
+  
+<button type="button" class="collapsible"><b>Yoga and Fitness sessions</b></button>
+<div class="content">
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-half">
+      <img src="yoga.jpeg" alt="yoga" style="width:60%">
+      
+    </div>
+    <div class="w3-half">
+      <img src="fitness.jpeg" alt="fitness" style="width:50%">
+      
+    </div>
+  
+</div>
+
+  </div>
+  
+    <button type="button" class="collapsible"><b>Parent interactive sessions</b></button>
+<div class="content">
+  <div class="w3-row-padding w3-padding-16 w3-center">
+<img src="parents1.jpeg" width=30% align="center">
+</div>
+</div>
+
+  <button type="button" class="collapsible"><b>Junior Events</b></button>
+<div class="content">
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="junior_events_1.jpeg" alt="junior_events_1" style="width:80%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="junior_events_2.jpeg" alt="junior_events_2" style="width:80%">
+      
+    </div>
+    
+     <div class="w3-quarter">
+      <img src="junior_events4.jpeg" alt="junior_events4" style="width:80%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="junior_events6.jpeg" alt="junior_events6" style="width:89%">
+      
+    </div>
+    
+  </div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="junior_events3.jpeg" alt="junior_events3" style="width:100%">
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="junior_events5.jpeg" alt="junior_events5" style="width:100%">
+      
+    </div>
+    
+     
+    <div class="w3-quarter">
+      <img src="junior_events2.jpeg" alt="junior_events2" style="width:85%">
+      
+    </div>
+   
+    <div class="w3-quarter">
+      <img src="junior_events1.jpeg" alt="junior_events1" style="width:100%">
+      
+    </div>
+    
+  </div>
+  
+  
+  
+  
+</div>
+  
+  
+<!-- end of academy-->
+  </div>
+  
+  
+ 
+
+
+    <!-- Container (GOLF CENTRE Section) -->
+  
+    <div id="golfcentre" class="container-fluid text-center">
+      
+         <h2>golf centre</h2>
+        <p>With extraordinary coaching and golfing facilities Tolly Airtel Golf Centre is amongst the top 20 country clubs in the world. Recently, the golf centre has been awarded as the Best Golf Academy in India at the India Golf Awards 2017. The centre hosts 90% of all the corporate golf events in Kolkata. Leading corporate houses have membership at Tolly. The leading integrated golf centre in the country has the world’s most acclaimed training aids. It is best in class equipment with a unique high quality repair and fitting facilities. One can get top quality training equipments like Callaway balls, Callaway club from the centre. It is a preferred destination for top companies for their golfing and promotional needs. The centre also has a Sports Science Centre.</p>
+        <a href="pages/golf.html">Know more</a>
+    </div>
+  
+
+ 
+
+<!-- Container (Services Section) -->
+    
+<div id="services" class="container-fluid text-center">
+  
+  <h2>services</h2>
+  <p>Our Services:</p>
+<button type="button" class="collapsible"><b>Online Education Platform</b></button>
+<div class="content">
+ 
+<img src="CFLLOGO.png" width=10% align="left"><br>
+<p> Thousands of potential sports superstars do not even get to the stage where they can showcase their talent – they are forced to choose academics over sports. Champ For Life (CFL) Academy has been conceptualized to enable young sportspersons to pursue their passion with obsession.
+
+With Champ for Life (CFL), you no longer have to choose between a basic education and pursuing a dream in sports (or an alternative career).</p>
+<p><b> YOU CAN DO BOTH! </b> </p> <p>CFL enrolls students in NIOS (classes 10 and 12) and IGNOU (Graduation) and provides the entire tuition in a concise simple form. The course content is edited to reduce study time by almost 80 percent. Students can devote the time saved to their chosen field.
+
+Study modules are presented through summaries, Q & A and audio visual lectures. NIOS and IGNOU are both Boards recognized by the Government. In addition, CFL offers 7 complementary Subjects, specially formulated for athletes and budding professionals to prepare them for their chosen field.</p>  
+<a href="https://www.champforlife.in/">Know more</a>
+</div>
+<button type="button" class="collapsible"><b>Media</b></button>
+<div class="content">
+  <img src="Golftradelogo.png" width=10% align="left"><br>
+<p> GolfTrade.net is the first, one of its kind, one stop destination for Golfers for all their requirements. Golftrade.net has two major aspects:</p>
+
+
+<p> <strong>Media</strong> Get the latest Golf news and updates, articles by eminent professional golfers, sports psychologists and fitness instructors, Tournament updates, interviews and sneak peeks into the lives of talented young champions.</p>
+<p> <strong>Classified</strong> A platform for golfers to post free ads of their equipment and become a part of the largest online Golf retail system.</p><br>       
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-half">
+      <img src="media1.jpg" alt="media1" style="width:50%">
+      
+    </div>
+
+    
+    <div class="w3-half">
+      <img src="media2.jpg" alt="media2" style="width:60%">
+     </div>
+</div>
+</div>
+  <button type="button" class="collapsible"><b>Sports infrastructure and development</b></button>
+<div class="content">
+ <h4><b>Glade One</b></h4>
+
+<p> Indrajit Bhalotia and his Protouch team built an exquisite Golf Course in Ahmedabad from scratch.
+</p>  
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-quarter">
+      <img src="gladeone1.jpg" alt="gladeone1" style="width:100%">
+      
+    </div>
+<div class="w3-quarter">
+      <img src="gladeone2.jpg" alt="gladeone2" style="width:100%">
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="gladeone3.jpg" alt="gladeone3" style="width:100%">
+     </div>
+
+<div class="w3-quarter">
+      <img src="gladeone4.jpg" alt="gladeone4" style="width:100%">
+     </div>
+</div>
+<br>
+<p><b>The Course Layout :</b> The marvellous Gary Player design Golf Course at Glade One, Ahmedabad is the new destination for Golf enthusiast from all over the country. 
+</p>
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-quarter">
+      <img src="course_layout.jpg" alt="course_layout" style="width:80%">
+      
+    </div>
+<div class="w3-quarter">
+      <img src="course_layout2.jpg" alt="course_layout2" style="width:100%">
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="course_layout3.jpg" alt="course_layout3" style="width:100%">
+     </div>
+
+<div class="w3-quarter">
+      <img src="course_layout4.jpg" alt="course_layout4" style="width:100%">
+     </div>
+</div>
+<br>
+<p><b>Glade One Golf Team :</b> Entire staff body was managed and organized by Protouch team under the guidance of Indrajit Bhalotia.
+Protouch, has successfully launched the Glade One Golf Course on 16th-17th April, 2016 with 200 golfers from the city enjoying their round on the course for the first time.
+</p>
+<div class="w3-row-padding w3-padding-16 w3-center">
+
+      <img src="gladeone_golfteam2.jpg" alt="gladeone_golfteam2" style="width:50%" allign= "center">
+        
+</div>
+<br>
+
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-third">
+      <img src="golf_course.jpg" alt="golf_course" style="width:100%">
+      
+    </div>
+  <div class="w3-third">
+      <p><b>The Golf Course</b></p>
+      
+    </div>
+  
+<div class="w3-third">
+      <img src="golf_course2.jpg" alt="golf_course2" style="width:100%">
+      
+    </div>
+    
+</div>
+  
+  <br>
+
+
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-third">
+      <img src="theclubhouse.jpg" alt="theclubhouse" style="width:100%">
+      
+    </div>
+   <div class="w3-third">
+      <p><b>The Clubhouse</b></p>
+      
+    </div>
+<div class="w3-third">
+      <img src="theclubhouse2.jpg" alt="theclubhouse" style="width:100%">
+      
+    </div>
+    
+</div>
+<br>
+<p><b>The Proshop :</b> Entire Stock order,  Billing software setup, interior planning at Glade One is managed by Protouch.
+</p>
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-quarter">
+      <img src="the_proshop1.jpg" alt="the_proshop1" width="255" height="255">
+      
+    </div>
+<div class="w3-quarter">
+      <img src="the_proshop2.jpg" alt="the_proshop2" width="255" height="255">
+      
+    </div>
+<div class="w3-quarter">
+      <img src="the_proshop3.jpg" alt="the_proshop3" width="255" height="255">
+      
+    </div>
+<div class="w3-quarter">
+      <img src="the_proshop4.jpg" alt="the_proshop4" width="255" height="255">
+      
+    </div>
+    
+</div>
+<br>
+
+  <div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-third">
+      <img src="the_marketing.jpg" style="width:100%" >
+      <p><b>The Marketing pavilion</b></p>
+    </div>
+
+    
+    <div class="w3-third">
+      <img src="the_drivin.jpg" style="width:90%" >
+  <p><b>The Driving range :</b> The Driving range was conceptualised by Protouch  and is equipped with artificial hitting turf and state of the art coaching studio.
+</p>
+</div>
+    
+    <div class="w3-third">
+      <img src="glade_caddy.jpg" style="width:90%" >
+      <p><b>The Caddy Program :</b> The Caddy training program at Glade One organized successfully by Protouch.
+</p>
+    </div>
+   
+    
+</div>
+  
+<br>
+  
+<p><b>Course Products & signages </b> </p> 
+<div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-quarter">
+      <img src="glade_course_product1.jpg" alt="glade_course_product1" style="width:100%" >
+      
+    </div>
+<div class="w3-quarter">
+      <img src="glade_course_product2.jpg" alt="glade_course_product2" style="width:100%" >
+      
+    </div>
+<div class="w3-quarter">
+      <img src="glade_course_product3.jpg" alt="glade_course_product3" style="width:70%" >
+      
+    </div>
+<div class="w3-quarter">
+      <img src="glade_course_product4.jpg" alt="glade_course_product4" style="width:100%" >
+      
+    </div>
+</div>
+  
+
+
+</div>
+  
+  <button type="button" class="collapsible"><b>Club Fitting & Repair Centre</b></button>
+<div class="content">
+   <h3><b>Club Fitting & Repair Centre</b></h3> <br>
+<p>  Protouch manages the only Fitting Centre in Eastern India which is also one of the finest in the country, at Tolly Airtel Golf Centre. Equipped with a Flightscope, Putting Studio, and Fitting Equipment like :</p>  
+<p style="text-align:left;"><b>Loft and Lie Machine</b></p>
+<p style="text-align:left;"><b>Putter Loft and Lie Machine</b></p>
+<p style="text-align:left;"><b>Gripping Station</b></p>
+<p style="text-align:left;"><b>Frequency Monitor</b></p>
+<p style="text-align:left;"><b>Shaft Extractor</b></p>
+
+ <div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-third">
+      <img src="club_fitting1.jpeg" alt="club_fitting1" style="width:100%" >
+      
+    </div>
+<div class="w3-third">
+      <img src="club_fitting2.jpeg" alt="club_fitting2" style="width:110%" >
+      
+    </div>
+<div class="w3-third">
+      <img src="club_fitting3.jpeg" alt="club_fitting3" style="width:70%" >
+      
+    </div>
+
+</div>   
+ </div>
+  
+  <button type="button" class="collapsible"><b>Sports Science Wing</b></button>
+<div class="content">
+  <h3><b>Sports Science Wing</b></h3> <br>
+<p> Protouch is the only Academy in India with an extensive Sport Science Wing.</p>
+<p style="text-align:left;"><b>Scientific Golf Coaching</b></p>
+<p style="text-align:left;"><b>Trained Coaches who are well versed in child psychology.</b></p>
+<p style="text-align:left;"><b>World Class Practice Facilities</b></p>
+<p style="text-align:left;"><b>NGAI Certified coaches</b></p>
+<p style="text-align:left;"><b>Sports Science Centre</b></p>
+<p style="text-align:left;"><b>Top Quality Training Equipments</b></p>
+ <!-- First Photo Grid-->
+<div class="row">
+    <div class="w3-half">
+   
+      <a href="#demo15" data-toggle="collapse">
+        <img src="anwar.jpg" class="img-square person" alt="Anwar Wahhab" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Anwar Wahhab</strong></p>
+      <div id="demo15" class="collapse">
+        
+<p>“PICP” certified Fitness Consultant</p>
+<p>Trained Asian PGA golfers.</p>
+
+      </div>
+    </div>
+
+    <div class="w3-half">
+    
+      <a href="#demo16" data-toggle="collapse">
+        <img src="malini.png" class="square person" alt="Malini Sarkar" width="255" height="255">
+      </a>
+<p class="text-center"><strong>Malini Sarkar</strong></p>
+      <div id="demo16" class="collapse">
+        <p>MBA, B.Psy, University of Woolongong, Australia</p> 
+<p>Sports psychology sessions for promising juniors.</p>
+      </div>
+    </div>
+    
+  </div> 
+</div>
+    <button type="button" class="collapsible"><b>Event Management</b></button>
+<div class="content">
+  <h3><b>Event Management</b></h3> <br>
+<p>PROTOUCH is one of the largest event management companies in the game of Golf. We manage golf events like Tolly Cup, Monsoon cup which are among the biggest golfing events in terms of sheer magnitude. Spread over 4 days, about 600 golfers take part in these club events held at Tollygunge Club, Kolkata. Protouch has been also organizing the RCGC-PROTOUCH Inter-School Golf Championship since 2005. This is the biggest inter-school golf event in India with 160 participants from 21 schools taking part in the 2015 edition. </p>
+<p style="text-align:left;"><b>Royal Premier Golf League, 2017.</b></p>
+<p style="text-align:left;"><b> Inter-City Golf, 2014 with eminent clubs from all over the country participating.</b></p>
+<p style="text-align:left;"><b>All India Amature, 2016</b></p>
+<p style="text-align:left;"><b>First ever, India v/s South Africa Golf Test Series, 2016.</b></p>
+<p style="text-align:left;"><b>ICICI Bank Corporate Golf in Delhi and Kolkata.</b></p>
+<p style="text-align:left;"><b>United Way Kolkata Golf Tournament.</b></p>
+<p style="text-align:left;"><b>HOPE CUP, a charity golf event in the aid of children diagnosed with cerebral palsy.</b></p>
+<p style="text-align:left;"><b>United Way of Kolkata Golf Tournament, 2014.</b></p>
+<p style="text-align:left;"><b>Vodafone Golf Swing 2013.</b></p>
+<p style="text-align:left;"><b>Pan-IIT golf Tournament.</b></p>
+<p style="text-align:left;"><b>Bengal Chamber of Commerce.</b></p>
+ 
+<p style="text-align:left;"><b>Eastern India Inter School Championship</b></p>
+<p style="text-align:left;"><b>IGU Eastern India Amateur Golf Feeder Tour 2018, 2019 & 2020</b></p>
+<p style="text-align:left;"><b>Protouch Junior Tour 2016-20</b></p>
+
+ <br>
+  
+
+      
+      
+    
+  <div class="w3-row-padding w3-padding-16 w3-center">
+<div class="w3-quarter">
+      <img src="event_management13.jpeg" alt="event_management12" style="width:100%">
+     </div>
+  
+  <div class="w3-quarter">
+      <img src="event_management9.jpeg" alt="event_management9" style="width:105%">
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="event_management2.jpg" alt="event_management2" style="width:95%">
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="event_management4.jpg" alt="event_management4" style="width:95%">
+     </div>
+</div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    
+    <div class="w3-quarter">
+      <img src="event_management1.jpg" alt="event_management1" style="width:90%">
+      
+    </div>
+    
+<div class="w3-quarter">
+      <img src="event_management5.jpeg" alt="event_management5" style="width:100%">
+     
+    </div>    
+
+    <div class="w3-quarter">
+      <img src="event_management6.jpeg" alt="event_management6" style="width:100%">
+      
+    </div>
+    
+    <div class="w3-quarter">
+      <img src="event_management8.jpeg" alt="event_management8" style="width:110%">
+     </div>
+</div>
+  
+  <div class="w3-row-padding w3-padding-16 w3-center">
+   
+    <div class="w3-third">
+      <img src="event_management10.jpeg" alt="event_management10" style="width:100%">
+      
+    </div>
+    <div class="w3-third">
+      <img src="event_management11.jpeg" alt="event_management11" style="width:100%">
+      
+    </div>
+    <div class="w3-third">
+      <img src="event_management12.jpeg" alt="event_management12" style="width:100%">
+     </div>
+    
+</div>
+   <div class="w3-row-padding w3-padding-16 w3-center">
+  
+      <img src="event_management3.jpg" alt="event_management3" style="width:50%" align= "center">
+     
+     
+    </div>
+  
+</div>
+  
+    <button type="button" class="collapsible"><b>Loyalty and Club Protouch</b></button>
+<div class="content">
+ <h3><b>Loyalty and Club Protouch</b></h3> <br>
+<p> Protouch, over the past 28 years, has served golfers from across India.  Golfers have made Protouch India’s leading lone stop golf solutions company and its time to payback to all the patrons who have got us where we are today. Protouch has been the leading Golf Academy in Eastern India and has also been awarded as the best Golf Academy in India. Protouch is now proud to offer a unique program with special benefits keeping our most loyal golfers who are associated with our academy in mind. The loyalty card issued by Protouch offers various benefits and discounts in the associated places to the loyalty card holders.
+<br>
+<p>
+  <b>In order to be eligible for the loyalty card programme:</b>
+  </p>
+
+A junior enrolled in the programme must have been associated with Protouch for last 2 years (must have paid 6 months fees for the current programme else the cost for the card will be Rs.5000).
+All tour players registered for IGU Eastern India Amateur Golf Feeder tour.</p>
+</div>
+  
+  
+  
+
+<!-- Container (CHARITY Section) -->
+
+    <div id="charity" class="container-fluid text-center">
+      
+         <h2>charity</h2>
+<h3><strong>Shyamali Bhalotia Memorial Trust</strong></h3> <br>
+<p>  Protouch is actively involved in community service and social welfare. The Shyamali Bhalotia Memorial trust funds The caddy training and junior program that provides opportunities to talented individuals without privileged grounding.
+</p><br>
+
+<div class="w3-row-padding w3-padding-16 w3-center">
+    <div class="w3-quarter">
+      <img src="trust2.jpg" alt="trust2" style="width:90%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="trust1.jpg" alt="trust1" style="width:100%">
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="trust4.jpg" alt="trust4" style="width:100%">
+      
+      
+    </div>
+    <div class="w3-quarter">
+      <img src="trust3.jpg" alt="trust3" style="width:70%">
+     </div>
+</div>
+<br>
+<h3><strong>Sai Baba Sevashram And Yoga Research </strong></h3> <br>
+<h4><strong>No Child Sleeps Hungry</strong></h4>
+<p> Protouch with the aid of Shaymali Bhalotia trust in association with Sai Baba Sevashram And Yoga Research, has declared war on starvation of children and has promised not to rest until the day no child sleeps hungry.
+The trust provides food to more than 600 children daily. It also provides mid day meals five days a week, to its associated schools.
+Apart from food, the trust also supplies books, stationaries, blankets to the under privileged communities.
+</p> <br>
+
+<div class="w3-row-padding w3-padding-16 w3-center">
+    
+    <div class="w3-half">
+      <img src="seva2.png" alt="seva2" style="width:50%">
+      
+    </div>
+    
+    <div class="w3-half">
+      <img src="seva4.png" alt="seva4" style="width:55%">
+     </div>
+</div>
+
+<a href="http://www.nochildsleepshungry.in/">Know more</a>
+    </div>
+  
+
+<!-- Container (Contact Section) -->
+
+<div id="contact" class="container-fluid bg-grey">
+  <h2 class="text-center bg-grey2">CONTACT US</h2>
+  <div class="row">
+    <div class="col-sm-5">
+      <p>Contact us and we'll get back to you within 24 hours.</p>
+<p><strong>Protouch Sports Pvt Ltd</strong></p>
+
+      <p><span class="glyphicon glyphicon-map-marker"></span> Capricorn Willows,73, Moore Avenue Kolkata-700040, West Bengal, India</p>
+      <p><span class="glyphicon glyphicon-phone"></span>+91 84202 40000</p>
+<p><span class="glyphicon glyphicon-phone"></span>+91 92315 53355</p>
+<p><span class="glyphicon glyphicon-phone"></span>+91 81000 31414</p>
+      <p><span class="glyphicon glyphicon-envelope"></span> protouchsports@gmail.com</p>
+    </div>
+    <div class="col-sm-7 slideanim">
+      <div class="row">
+        <div class="col-sm-6 form-group">
+		
+		<form  id="fb" action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfpBuoMPndM80SSebvudrXe3xNRs5rvdvXItfoJgMG3OJrNWw/formResponse" method="post" target="hidden_iframe">
+          <input class="form-control" id="name" name="entry.825384473" placeholder="Name" type="text" required>
+        </div>
+        <div class="col-sm-6 form-group">
+          <input class="form-control" id="email" name="entry.1691078927" placeholder="Email" type="email" required>
+        </div>
+      </div>
+      <textarea class="form-control" id="comments" name="entry.249910696" placeholder="Comment" rows="5"></textarea><br>
+      <div class="row">
+        <div class="col-sm-12 form-group">
+          <button class="btn btn-default pull-right" type="submit">Send</button>
+		  
+		
+        </div>
+		
+      </div>
+	   </form>
+    </div>
+  </div>
+  <div class="w3-row-padding w3-padding-16 w3-center">
+    <p >
+      <b>Find us here</b>
+    </p>
+    
+    <div class="w3-half">
+      <p>
+        <b>Where We Operate</b>
+      </p>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d14744.949243486582!2d88.3436111!3d22.4952778!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x6e2c987215c40c94!2sThe%20Tollygunge%20Club!5e0!3m2!1sen!2sin!4v1600792473845!5m2!1sen!2sin" width="500" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+      
+    </div>
+    
+    <div class="w3-half">
+      <p>
+        <b>Office Address</b>
+      </p>
+     <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3686.7175464390834!2d88.35130971427188!3d22.477246142130006!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a026fff71922215%3A0xe3a0e33e33bcccac!2sCapricorn%20Willows!5e0!3m2!1sen!2sin!4v1600792530407!5m2!1sen!2sin" width="500" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+     </div>
+</div>
+  
+  
+  
+  
+  
+  
+  
+</div>
+
+
+<!-- Footer -->
+<footer class="container-fluid text-center">
+  
+  <a href="#home" title="To Top">
+    <span class="glyphicon glyphicon-chevron-up"></span>
+  </a>
+
+  <p>Made with Love by <a href="https://www.facebook.com/sush.mita.3150807" ><strong>Sushmita Paul</strong></a></p>
+</footer>
+
+<script>
+$(document).ready(function(){
+  // Add smooth scrolling to all links in navbar + footer link
+  $(".navbar a, footer a[href='#myPage']").on('click', function(event) {
+    // Make sure this.hash has a value before overriding default behavior
+    if (this.hash !== "") {
+      // Prevent default anchor click behavior
+      event.preventDefault();
+
+      // Store hash
+      var hash = this.hash;
+
+      // Using jQuery's animate() method to add smooth page scroll
+      // The optional number (900) specifies the number of milliseconds it takes to scroll to the specified area
+      $('html, body').animate({
+        scrollTop: $(hash).offset().top
+      }, 900, function(){
+   
+        // Add hash (#) to URL when done scrolling (default click behavior)
+        window.location.hash = hash;
+      });
+    } // End if
+  });
+  
+  $(window).scroll(function() {
+    $(".slideanim").each(function(){
+      var pos = $(this).offset().top;
+
+      var winTop = $(window).scrollTop();
+        if (pos < winTop + 600) {
+          $(this).addClass("slide");
+        }
+    });
+  });
+})
+  var coll = document.getElementsByClassName("collapsible");
+var i;
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", function() {
+    this.classList.toggle("active");
+    var content = this.nextElementSibling;
+    if (content.style.display === "block") {
+      content.style.display = "none";
+    } else {
+      content.style.display = "block";
+    }
+  });
+}
+  
+</script>
+
+</body>
+</html>

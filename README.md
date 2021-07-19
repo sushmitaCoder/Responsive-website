@@ -1,2 +1,2 @@
 # Responsive-website
-Company's website made during Internship. 
+##Company's website was made Web development internship.
